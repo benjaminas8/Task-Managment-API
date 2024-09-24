@@ -44,6 +44,23 @@ const GET_TASK_BY_ID = async (req, res) => {
 };
 
 const UPDATE_TASK = (req, res) => {};
-const DELETE_TASK = (req, res) => {};
+const DELETE_TASK = async (req, res) => {
+  try {
+    const response = await TaskModel.findOneAndDelete({ id: req.params.id });
+
+    if (!response) {
+      return res.status(404).json({
+        message: "This task does not exist so you cannot delete it",
+      });
+    }
+
+    return res
+      .status(200)
+      .json({ message: "Task was deleted successfully", task: response });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Error in aplication" });
+  }
+};
 
 export { CREATE_TASK, GET_ALL_TASKS, GET_TASK_BY_ID, UPDATE_TASK, DELETE_TASK };
