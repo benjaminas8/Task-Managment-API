@@ -43,7 +43,9 @@ const GET_TASK_BY_ID = async (req, res) => {
   }
 };
 
-const UPDATE_TASK = (req, res) => {};
+const UPDATE_TASK = (req, res) => {
+  // Jei liks laiko
+};
 const DELETE_TASK = async (req, res) => {
   try {
     const response = await TaskModel.findOneAndDelete({ id: req.params.id });

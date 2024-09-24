@@ -13,7 +13,7 @@ import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.post("/users", validate(userSchema), CREATE_USER);
+router.post("/register", validate(userSchema), CREATE_USER);
 
 router.post("/login", LOGIN);
 

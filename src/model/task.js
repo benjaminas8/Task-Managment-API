@@ -21,6 +21,11 @@ const taskSchema = new mongoose.Schema({
     type: String,
     default: false,
   },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
 });
 
 export default mongoose.model("Task", taskSchema);
