@@ -36,7 +36,7 @@ const GET_TASK_BY_ID = async (req, res) => {
     const response = await TaskModel.findOne({ id: req.params.id });
     console.log(response);
 
-    return res.status(200).json({ tasks: response });
+    return res.status(200).json({ task: response });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Error in aplication" });
