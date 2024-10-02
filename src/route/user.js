@@ -5,6 +5,7 @@ import {
   LOGIN,
   GET_USER_BY_ID,
   GET_ALL_ACTIVE_USERS,
+  VALIDATE_LOGIN,
 } from "../controller/user.js";
 
 import validate from "../middleware/validation.js";
@@ -20,5 +21,7 @@ router.post("/login", LOGIN);
 router.get("/users", auth, GET_ALL_ACTIVE_USERS);
 
 router.get("/users/:id", auth, GET_USER_BY_ID);
+
+router.get("/login/validate", auth, VALIDATE_LOGIN);
 
 export default router;

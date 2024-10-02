@@ -118,4 +118,19 @@ const GET_USER_BY_ID = async (req, res) => {
   }
 };
 
-export { CREATE_USER, LOGIN, GET_ALL_ACTIVE_USERS, GET_USER_BY_ID };
+const VALIDATE_LOGIN = async (req, res) => {
+  try {
+    return res.status(200).json({ message: "user validated" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "Error in application" });
+  }
+};
+
+export {
+  CREATE_USER,
+  LOGIN,
+  GET_ALL_ACTIVE_USERS,
+  GET_USER_BY_ID,
+  VALIDATE_LOGIN,
+};
