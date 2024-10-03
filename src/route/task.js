@@ -13,7 +13,7 @@ const router = express.Router();
 router.post("/tasks", CREATE_TASK);
 router.get("/tasks", GET_ALL_TASKS);
 router.get("/tasks/:id", GET_TASK_BY_ID);
-router.put("/tasks/:id", UPDATE_TASK);
+router.patch("/tasks/:id", UPDATE_TASK);
 router.delete("/tasks/:id", DELETE_TASK);
 
 export default router;
