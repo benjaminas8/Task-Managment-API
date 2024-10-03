@@ -4,10 +4,10 @@ import TaskModel from "../model/task.js";
 const CREATE_TASK = async (req, res) => {
   try {
     const task = {
-      userId: req.body.userId,
+      userId: req.body.userId || null,
       taskTitle: req.body.taskTitle,
       taskText: req.body.taskText,
-      isCompleted: req.body.isCompleted,
+      isCompleted: req.body.isCompleted || false,
       id: uuidv4(),
     };
 

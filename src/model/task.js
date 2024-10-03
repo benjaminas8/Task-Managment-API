@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const taskSchema = new mongoose.Schema({
   userId: {
     type: String,
-    required: true,
+    required: false,
   },
   taskTitle: {
     type: String,
